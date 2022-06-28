@@ -2,7 +2,7 @@
 A Python Code to generate and analyze CHARMM and NAMD files. 
 
 ### Usage
-python3 PyPostProc.py < residue name> < full path to CGenFF style stream file >
+python3 PyPostProc.py < residue name > < full path to CGenFF style stream file >
 
 ### Dependencies
 1. The code is written for Python versions of 3.5 and above, eventhough the code does not check for the Python version. However, It is recommended that the code be run using Python3. The code may also not work on Windows Machines. 
