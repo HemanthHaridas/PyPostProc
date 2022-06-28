@@ -111,7 +111,7 @@ def main():
 
     _StreamBuffer, _TopologyBuffer  =   _readstreamfile(_StreamfileName, _ResidueName)
     try:
-        assert _StreamBuffer != False, "[ERROR]: Unable to parse CHARMM stream file"
+        assert _StreamBuffer != [], "[ERROR]: Unable to parse CHARMM stream file"
     except AssertionError as Message:
         exit(Message)
     print("CHARMM stream file {} has been successfully parsed by PyPostProc\n\n".format(_StreamfileName))
