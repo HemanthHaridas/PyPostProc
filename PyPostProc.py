@@ -50,7 +50,7 @@ def _readstreamfile(_streamfileName, _residuename):
 
     return _streamBuffer, _topologyBuffer
 
-def _extractCoordinates(_streamBuffer, _residuename):
+def _extractQMCoordinates(_streamBuffer, _residuename):
     _gaussianlogfileName    =   input("Enter path to Gaussian log file : ")
     
     with open(_gaussianlogfileName) as gausslog:
@@ -124,7 +124,7 @@ def main():
     _AnalysisType   =   input("Enter your choice (Default = 1) : ")
 
     if _AnalysisType == '1':
-        _QMcoordsBuffer, _NumberAtoms   =   _extractCoordinates(_StreamBuffer, _ResidueName)  
+        _QMcoordsBuffer, _NumberAtoms   =   _extractQMCoordinates(_StreamBuffer, _ResidueName)  
         _writecrdFile(_StreamBuffer, _ResidueName, _QMcoordsBuffer, _NumberAtoms)
 
     if _AnalysisType == '2':
@@ -135,7 +135,7 @@ def main():
 
     if _AnalysisType == '4':
         _PathtoCHARMM                   =   input("Enter the full path to CHARMM executable : ")
-        _QMcoordsBuffer, _NumberAtoms   =   _extractCoordinates(_StreamBuffer, _ResidueName)   
+        _QMcoordsBuffer, _NumberAtoms   =   _extractQMCoordinates(_StreamBuffer, _ResidueName)   
         _generateNAMDconfigFile(_StreamfileName, _ResidueName, _QMcoordsBuffer, _NumberAtoms, _PathtoCHARMM, 10.0)
 #        run([_PathtoCHARMM,'-l'])
 
